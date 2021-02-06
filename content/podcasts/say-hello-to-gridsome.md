@@ -1,10 +1,10 @@
 ---
-title: Say hello to Webe Radio 🎉
+title: Questo è un podcast
 date: 2021-02-04
 published: true
 tags:
-  - Markdown
-  - Releases
+  - Podcast
+  - Test
 cover_image: ../../static/images/uploads/radio.jpg
 description: A new static site generator baby is born. It's highly inspired by
   Gatsby.js (React based) but built on top of Vue.js. We have been working on it
