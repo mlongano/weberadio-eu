@@ -6,10 +6,11 @@
 
 module.exports = {
   siteName: 'Webe Radio',
-  siteDescription: 'Web Radio, Podcast e Video delle scuole del Trentino',
+  siteDescription: 'Web Radio, Podcast e Video dalle scuole del Trentino',
 
   templates: {
     Post: '/:title',
+    Podcast: '/:title',
     Tag: '/tag/:id'
   },
 
@@ -20,6 +21,21 @@ module.exports = {
       options: {
         typeName: 'Post',
         path: 'content/posts/*.md',
+        refs: {
+          // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
+      }
+    },
+    {
+      // Create posts from markdown files
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Podcast',
+        path: 'content/podcasts/**/*.md',
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
